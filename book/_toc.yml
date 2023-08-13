@@ -5,3 +5,4 @@ format: jb-book
 root: intro
 chapters:
 - file: lab-1-ca-forest
+- file: lab-3-optimization
