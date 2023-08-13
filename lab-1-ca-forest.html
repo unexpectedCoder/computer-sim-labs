@@ -67,7 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'lab-1-ca-forest';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Описание сборника заданий" href="intro.html" />
+    <link rel="next" title="Лабораторная работа №3 - Задачи дискретной и непрерывной оптимизации" href="lab-3-optimization.html" />
+    <link rel="prev" title="Введение" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,12 +155,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Описание сборника заданий
+                    Введение
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Лабораторная работа №1 - Клеточный автомат “Лесной пожар”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab-3-optimization.html">Лабораторная работа №3 - Задачи дискретной и непрерывной оптимизации</a></li>
 </ul>
 
     </div>
@@ -354,20 +356,19 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Задача</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Требования к отчёту</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Варианты</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Код</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Возможные окрестности</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Описание состояний клеток</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Функция визуализации</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Создание и инициализация клеточного автомата</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Описание эволюции клеточного автомата</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Запуск моделирования</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Варианты</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Код</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Возможные окрестности</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Описание состояний клеток</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Функция визуализации</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Создание и инициализация клеточного автомата</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Описание эволюции клеточного автомата</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Запуск моделирования</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Ожидаемый результат работы</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Ожидаемый результат работы</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Вопросы</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">См. также</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">См. также</a></li>
 </ul>
             </nav>
         </div>
@@ -383,10 +384,13 @@ document.write(`
 <h1>Лабораторная работа №1 - Клеточный автомат “Лесной пожар”<a class="headerlink" href="#o1" title="Permalink to this heading">#</a></h1>
 <section id="id1">
 <h2>Задача<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Эволюция лесного пожара описывается клеточным автоматом (КА).</p>
 <p>Лес моделируется клеточным полем размером <span class="math notranslate nohighlight">\(w \times h\)</span>.
-В <span class="math notranslate nohighlight">\(n\)</span> клетках поля изначально есть деревья: <span class="math notranslate nohighlight">\(n \le w \cdot h\)</span>, в остальных клетках деревьев нет.
-Цвет клетки с деревом зелёный, без дерева - чёрный, с горящим деревом - оранжевый.
-Изначально имеется <span class="math notranslate nohighlight">\(f\)</span> горящих деревьев.
+В <span class="math notranslate nohighlight">\(n\)</span> клетках поля изначально есть деревья: <span class="math notranslate nohighlight">\(n = \eta \cdot w \cdot h\)</span>, в остальных клетках деревьев нет.
+Здесь <span class="math notranslate nohighlight">\(\eta\)</span> - заполненность поля деревьями: <span class="math notranslate nohighlight">\(0 \le \eta \le 1\)</span>.</p>
+<p>Цвета клеток поля КА должны соответствовать одному единственному состоянию.
+Например, цвет клетки с деревом зелёный, без дерева - чёрный, с горящим деревом - оранжевый.</p>
+<p>Изначально имеется <span class="math notranslate nohighlight">\(f\)</span> горящих деревьев.
 Их координаты - ячейки - генерируются случайным образом.</p>
 <p><strong>Правила клеточного автомата:</strong></p>
 <ol class="arabic simple">
@@ -395,9 +399,10 @@ document.write(`
 <li><p>На месте пустой ячейки с вероятностью <span class="math notranslate nohighlight">\(P_{\rm g}\)</span> вырастает дерево, если в окрестности нет горящих деревьев.</p></li>
 <li><p>Любое дерево может загореться с заданной вероятностью <span class="math notranslate nohighlight">\(P_{\rm f}\)</span>.</p></li>
 </ol>
-<p><strong>Требуется:</strong></p>
+<p><strong>Цель</strong> работы - закрепить знания и получить опыт создания и применения КА для моделирования различных процессов.</p>
+<p><strong>Задачи</strong> работы:</p>
 <ol class="arabic simple">
-<li><p>Запрограммировать клеточный автомат (КА), описывающий эволюцию горящего леса.</p></li>
+<li><p>Запрограммировать КА, описывающий эволюцию горящего леса.</p></li>
 <li><p>Исследовать процесс лесного пожара, накапливая статистику количества горящих <span class="math notranslate nohighlight">\(a_{\rm f}\)</span> и негорящих <span class="math notranslate nohighlight">\(a_{\rm t}\)</span> деревьев, пустых ячеек <span class="math notranslate nohighlight">\(a_{\rm e}\)</span> и др.</p></li>
 <li><p>Исследовать влияние двух форм окрестности <span class="math notranslate nohighlight">\(\Theta = \{\theta_+, \theta_\times\}\)</span> (”<span class="math notranslate nohighlight">\(+\)</span>”-окрестность и окрестность фон-Неймана соответственно) на процесс распространения пожара.</p></li>
 <li><p>Обработав накопленную статистику, построить зависимость <span class="math notranslate nohighlight">\(a_{\rm f}(t,\Theta,\ldots)\)</span> распространения пожара в зависимости от времени <span class="math notranslate nohighlight">\(t\)</span>, формы окресности <span class="math notranslate nohighlight">\(\Theta\)</span> и/или от других факторов.</p></li>
@@ -406,43 +411,17 @@ document.write(`
 </ol>
 </section>
 <section id="id2">
-<h2>Требования к отчёту<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>Отчёт должен быть оформлен строго в соответствии с требованиями кафедры и содержать:</p>
-<ol class="arabic simple">
-<li><p>Титульный лист.</p></li>
-<li><p>Цели и задачи лабораторной работы.</p></li>
-<li><p>Теоретическая часть:</p>
-<ul class="simple">
-<li><p>краткие теоретические сведения о КА, их применении;</p></li>
-<li><p>достоинства и недостатки клетчатых автоматов;</p></li>
-<li><p>описание алгоритма моделирования (блок-схема или псевдокод).</p></li>
-</ul>
-</li>
-<li><p>Практическая часть:</p>
-<ul class="simple">
-<li><p>графики;</p></li>
-<li><p>комментарии к графикам, поясняющие полученные результаты.</p></li>
-</ul>
-</li>
-<li><p>Заключение.</p></li>
-<li><p>Ответы на поставленные <a class="reference internal" href="#questions"><span class="std std-ref">вопросы</span></a>.</p></li>
-</ol>
-<p><strong>Цель</strong> ЛР - закрепить знания и получить опыт создания и применения КА для моделирования различных процессов.</p>
-<p><strong>Задачи</strong> ЛР соответствуют тому, что требуется.</p>
-</section>
-<section id="id3">
-<h2>Варианты<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Варианты<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Группа делится на 4 варианта.</p>
 <p><strong>Общие исходные данные:</strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(w = 200\)</span>;</p></li>
 <li><p><span class="math notranslate nohighlight">\(h = 200\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(n = \eta \cdot w \cdot h\)</span>, где <span class="math notranslate nohighlight">\(\eta\)</span> - заполненность поля деревьями: <span class="math notranslate nohighlight">\(0 \le \eta \le 1\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\eta = 0.8\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(n = \eta \cdot w \cdot h\)</span> при <span class="math notranslate nohighlight">\(\eta = 0.8\)</span>;</p></li>
 <li><p><span class="math notranslate nohighlight">\(f = 1\)</span>;</p></li>
 <li><p><span class="math notranslate nohighlight">\(P_{\rm f} = 2 \cdot 10^{-5}\)</span>;</p></li>
 <li><p><span class="math notranslate nohighlight">\(P_{\rm g} = 0.02\)</span>;</p></li>
-<li><p>“затравка” генератора псевдослучайных чисел - <span class="math notranslate nohighlight">\(1097\)</span>;</p></li>
+<li><p>“затравка” (<em>seed</em>) генератора псевдослучайных чисел - <span class="math notranslate nohighlight">\(1097\)</span>;</p></li>
 <li><p>число итераций по времени - <span class="math notranslate nohighlight">\(500\)</span>.</p></li>
 </ul>
 <p><strong>Изменения в исходных данных в зависимости от варианта:</strong></p>
@@ -453,8 +432,8 @@ document.write(`
 <li><p><em>вариант 4</em> - рассмотреть различное число изначально горящих деревьев: <span class="math notranslate nohighlight">\(f = \{1, 3, 9\}\)</span>.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h2>Код<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2>Код<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Далее приведён шаблон кода, который может помочь в разработке КА.</p>
 <p>Для начала импортируем библиотеки, которые точно понадобятся:</p>
 <div class="cell docutils container">
@@ -478,8 +457,8 @@ document.write(`
 <p>На практике полезно инициализировать генератор случайных чисел явно.
 Это позволяет воспроизводить результаты псевдослучайных процессов разными пользователями на различных устройствах, что важно, когда речь идёт о научном исследовании.</p>
 </div>
-<section id="id5">
-<h3>Возможные окрестности<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h3>Возможные окрестности<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>Окрестности КА можно описать с помощью класса перечисления <a class="reference external" href="https://docs-python.ru/standart-library/modul-enum-perechislenija-python/"><code class="docutils literal notranslate"><span class="pre">Enum</span></code></a> из стандартной библиотеки <code class="docutils literal notranslate"><span class="pre">enum</span></code>.
 Для этого достаточно создать класс, унаследованный от <code class="docutils literal notranslate"><span class="pre">Enum</span></code>, и перечислить в нём состояния:</p>
 <div class="cell docutils container">
@@ -494,8 +473,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id6">
-<h3>Описание состояний клеток<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3>Описание состояний клеток<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>Поскольку число возможных состояний клеток конечно, описать эти состояния можно так же с помощью <code class="docutils literal notranslate"><span class="pre">Enum</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -508,8 +487,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id7">
-<h3>Функция визуализации<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3>Функция визуализации<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>Опишем функцию визуализации КА.</p>
 <p>Для начала <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormap-manipulation.html">создадим цветовую карту</a> из трёх цветов: тёмно-серого (угольного), оранжевого и зелёного.</p>
 <div class="cell docutils container">
@@ -569,8 +548,8 @@ document.write(`
 В данном случае КА (<code class="docutils literal notranslate"><span class="pre">ca</span></code>) мы будем представлять в виде двухмерной матрицы. В зависимости от числа в ячейке этой матрицы <code class="docutils literal notranslate"><span class="pre">matshow</span></code> назначит конкретный цвет из цветовой карты. В нашем случае, например, при <code class="docutils literal notranslate"><span class="pre">ca[3,</span> <span class="pre">7]</span> <span class="pre">=</span> <span class="pre">1</span></code> на графике в 4-й строке и 8-м столбце будет клетка с оранжевым цветом (<code class="docutils literal notranslate"><span class="pre">FIRING</span></code>).</p>
 <p>На этом подготовительный этап заканчивается.</p>
 </section>
-<section id="id8">
-<h3>Создание и инициализация клеточного автомата<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3>Создание и инициализация клеточного автомата<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>Один из вариантов структуры данных для хранения КА - это матрица размера <span class="math notranslate nohighlight">\(w \times h\)</span>.
 Для создания клеточного поля предлагается описать функцию:</p>
 <div class="cell docutils container">
@@ -600,8 +579,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id9">
-<h3>Описание эволюции клеточного автомата<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h3>Описание эволюции клеточного автомата<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">neighborhood_type</span><span class="p">):</span>
@@ -673,8 +652,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id10">
-<h3>Запуск моделирования<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<section id="id9">
+<h3>Запуск моделирования<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>Для запуска моделирования предлагается описать отдельную функцию, принимающую на вход КА <code class="docutils literal notranslate"><span class="pre">ca</span></code> и тип окрестности <code class="docutils literal notranslate"><span class="pre">neighborhood_type</span></code> и возвращающую накопленную статистику:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -735,8 +714,8 @@ document.write(`
 </div>
 </section>
 </section>
-<section id="id11">
-<h2>Ожидаемый результат работы<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h2>Ожидаемый результат работы<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <p>Ожидаемый результат моделирования представлен на картинках ниже.</p>
 <p><img alt="Пример итогового графика" src="_images/plot_example.png" /></p>
 <p><img alt="Пример промежуточного состояния КА" src="_images/grid_example.png" /></p>
@@ -745,15 +724,15 @@ document.write(`
 <p>Также стоит обработать статистику, получив конкретные числа, например, среднее количество горящих деревьев, среднее квадратическое отклонение этого количества и т.п. Полезные инструмент для этого содержатся в модуле <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a> пакета SciPy.</p>
 </section>
 <section id="questions">
-<span id="id12"></span><h2>Вопросы<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
+<span id="id11"></span><h2>Вопросы<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>По вашему мнению, достаточно ли реалистична разработанная модель лесного пожара?</p></li>
 <li><p>Можно ли её усовершенствовать, сделав более реалистичной?</p></li>
 <li><p>Достаточна ли вычислительная производительность программы на ваш взгляд? Можно ли её улучшить? Как?</p></li>
 </ol>
 </section>
-<section id="id13">
-<h2>См. также<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<section id="id12">
+<h2>См. также<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Построение графиков matplotlib подробнее описано в <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/intro.html">справочнике</a> кафедры СМ6.</p></li>
 <li><p>Для обработки статистики крайне полезным инструментом является модуль <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html"><code class="docutils literal notranslate"><span class="pre">stats</span></code></a> из пакета SciPy.</p></li>
@@ -798,8 +777,17 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Описание сборника заданий</p>
+        <p class="prev-next-title">Введение</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="lab-3-optimization.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Лабораторная работа №3 - Задачи дискретной и непрерывной оптимизации</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -820,20 +808,19 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Задача</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Требования к отчёту</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Варианты</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Код</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Возможные окрестности</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Описание состояний клеток</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Функция визуализации</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Создание и инициализация клеточного автомата</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Описание эволюции клеточного автомата</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Запуск моделирования</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Варианты</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Код</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Возможные окрестности</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Описание состояний клеток</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Функция визуализации</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Создание и инициализация клеточного автомата</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Описание эволюции клеточного автомата</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Запуск моделирования</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Ожидаемый результат работы</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Ожидаемый результат работы</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Вопросы</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">См. также</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">См. также</a></li>
 </ul>
   </nav></div>
 
