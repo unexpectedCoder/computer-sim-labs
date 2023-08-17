@@ -6,4 +6,5 @@ root: intro
 chapters:
 - file: homework
 - file: lab-1-ca-forest
+- file: lab-2-des-vulkano
 - file: lab-3-optimization
