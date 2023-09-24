@@ -523,7 +523,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_grid</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-    <span class="c1"># ca - клеточный автомат</span>
+    <span class="c1"># ca - клеточный автомат (матрица)</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># Не был передан уже созданный график</span>
         <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -548,7 +548,9 @@ document.write(`
 </div>
 </div>
 <p>График строится функцией <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.matshow.html"><code class="docutils literal notranslate"><span class="pre">matshow</span></code></a> (matrix show).
-В данном случае КА (<code class="docutils literal notranslate"><span class="pre">ca</span></code>) мы будем представлять в виде двухмерной матрицы. В зависимости от числа в ячейке этой матрицы <code class="docutils literal notranslate"><span class="pre">matshow</span></code> назначит конкретный цвет из цветовой карты. В нашем случае, например, при <code class="docutils literal notranslate"><span class="pre">ca[3,</span> <span class="pre">7]</span> <span class="pre">=</span> <span class="pre">1</span></code> на графике в 4-й строке и 8-м столбце будет клетка с оранжевым цветом (<code class="docutils literal notranslate"><span class="pre">FIRING</span></code>).</p>
+В данном случае КА (<code class="docutils literal notranslate"><span class="pre">ca</span></code>) мы будем представлять в виде двухмерной матрицы.
+В зависимости от числа в ячейке этой матрицы <code class="docutils literal notranslate"><span class="pre">matshow</span></code> назначит конкретный цвет из цветовой карты.
+Например, при <code class="docutils literal notranslate"><span class="pre">ca[3,</span> <span class="pre">7]</span> <span class="pre">=</span> <span class="pre">1</span></code> на графике в 4-й строке и 8-м столбце будет клетка с оранжевым цветом (<code class="docutils literal notranslate"><span class="pre">FIRING</span></code>).</p>
 <p>На этом подготовительный этап заканчивается.</p>
 </section>
 <section id="id7">
@@ -557,8 +559,13 @@ document.write(`
 Для создания клеточного поля предлагается описать функцию:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_ca</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
-    <span class="c1"># w, h - размеры КА</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_ca</span><span class="p">(</span><span class="n">w</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Создать однородную матрицу,</span>
+<span class="sd">    т.е. пустую матрицу или матрицу,</span>
+<span class="sd">    заполненную определённым значением.</span>
+
+<span class="sd">    * `w` и `h` - ширина и высота КА.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
     <span class="k">return</span> <span class="o">...</span>
 </pre></div>
@@ -570,42 +577,99 @@ document.write(`
 <p>Здесь и далее вместо заглушки <code class="docutils literal notranslate"><span class="pre">pass</span></code> должна быть ваша реализация.
 Вместо многоточих - имя вашей переменной (переменных).</p>
 </div>
-<p>Теперь необходимо задать начальное состояние КА <code class="docutils literal notranslate"><span class="pre">ca</span></code> - заполнить деревьями в количестве <span class="math notranslate nohighlight">\(n = \eta \cdot w \cdot h\)</span> и “поджечь” <span class="math notranslate nohighlight">\(f\)</span> <em>случайных</em> из них. Доступ к генераторам случайных чисел осуществляется через наш генератор <code class="docutils literal notranslate"><span class="pre">rs</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Важно, чтобы итоговая матрица <code class="docutils literal notranslate"><span class="pre">ca</span></code> хранила числа типа <code class="docutils literal notranslate"><span class="pre">int</span></code>, а не <code class="docutils literal notranslate"><span class="pre">float</span></code>.
+Иначе невозможно будет сравнивать значения на равенство <code class="docutils literal notranslate"><span class="pre">==</span></code>.</p>
+</div>
+<p>Теперь необходимо задать начальное состояние КА <code class="docutils literal notranslate"><span class="pre">ca</span></code> - заполнить деревьями в количестве <span class="math notranslate nohighlight">\(n = \eta \cdot w \cdot h\)</span> и “поджечь” <span class="math notranslate nohighlight">\(f\)</span> <em>случайных</em> из них. Доступ к генераторам случайных чисел осуществляется через наш генератор <code class="docutils literal notranslate"><span class="pre">rs</span></code>, который может быть либо глобальным (как в данном случае), либо передаваться как аргумент функций (полезно и удобно в больших программах).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">init_state</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">eta</span><span class="p">):</span>
-    <span class="c1"># ca - клеточный автомат</span>
-    <span class="c1"># eta - доля клеток с деревьями</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">init_state</span><span class="p">(</span><span class="n">ca</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">eta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Инициализировать начальное состояние КА,</span>
+<span class="sd">    т.е. в заданном количестве `eta*w*h` случайных</span>
+<span class="sd">    клеток разместить деревья и поджечь также случайным</span>
+<span class="sd">    образом `f` из деревьев.</span>
+
+<span class="sd">    * `ca` - клеточный автомат (матрица).</span>
+<span class="sd">    * `eta` - доля клеток с деревьями.</span>
+<span class="sd">    * `f` - число горящих деревьев.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Функция <code class="docutils literal notranslate"><span class="pre">init_state</span></code> может изменять саму переданную матрицу <code class="docutils literal notranslate"><span class="pre">ca</span></code>, а может лишь использовать её для формирования новой матрицы, которую в таком случае функция должна вернуть.
+Выбор вы делаете сами.
+Главное, чтобы функция <strong>делала что-то одно</strong>.</p>
 </div>
 </section>
 <section id="id8">
 <h3>Описание эволюции клеточного автомата<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">neighborhood_type</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Обновление всего КА.&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Для аннотации типов импортируем</span>
+<span class="c1"># стандартные типы данных.</span>
+<span class="c1"># Это упростит понимание того, аргументы</span>
+<span class="c1"># какого типа должны принимать функции.</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">ca</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">nt</span><span class="p">:</span> <span class="n">NeighborhoodType</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Обновление всего КА.</span>
+<span class="sd">    </span>
+<span class="sd">    * `ca` - матрица КА.</span>
+<span class="sd">    * `nt` - тип окрестности.</span>
+
+<span class="sd">    Возвращает новое состояние КА.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
-    <span class="c1"># Вернуть КА в новом состоянии</span>
     <span class="k">return</span> <span class="o">...</span>
 
-<span class="k">def</span> <span class="nf">update_cell</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">new_grid</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">neighborhood</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Обновление состояния заданной клетки `cell`.&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">update_cell</span><span class="p">(</span><span class="n">ca</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                <span class="n">new_ca</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                <span class="n">cell</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+                <span class="n">neighbor_indexes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Обновление состояния заданной клетки `cell`</span>
+<span class="sd">    в соответствии с правилами эволюции КА.</span>
+
+<span class="sd">    Условия проверяются по матрице `ca`, т.е.</span>
+<span class="sd">    по КА в текущем состоянии.</span>
+<span class="sd">    Новое же состояние клетки записывается в</span>
+<span class="sd">    матрицу `new_ca`.</span>
+<span class="sd">    </span>
+<span class="sd">    * `ca` - матрица КА.</span>
+<span class="sd">    * `new_ca` - матрица КА в новом состоянии.</span>
+<span class="sd">    * `cell` - кортеж, хранящий пару индексов `(i, j)`</span>
+<span class="sd">      текущей (рассматриваемой) ячейки КА.</span>
+<span class="sd">    * `neighbor_indexes` - список индексов</span>
+<span class="sd">      (кортежей пар индексов ячеек `(i, j)`) соседей</span>
+<span class="sd">      рассматриваемой ячейки `cell`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
 
-<span class="k">def</span> <span class="nf">get_cross_neighborhood</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">grid_shape</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Крестовая окрестность.&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">get_cross_neighborhood</span><span class="p">(</span><span class="n">cell</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+                           <span class="n">ca_shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Вернуть индексы окрестных ячеек клетки `cell = (i, j)`</span>
+<span class="sd">    для случая &quot;+&quot;-окрестности.</span>
+<span class="sd">    </span>
+<span class="sd">    Размеры КА `ca_shape = (h, w)` используются для определения</span>
+<span class="sd">    индексов, вышедших за границы КА (массива `ca`)..&quot;&quot;&quot;</span>
     <span class="k">pass</span>
     <span class="c1"># Вернуть индексы окрестных ячеек</span>
     <span class="k">return</span> <span class="o">...</span>
 
-<span class="k">def</span> <span class="nf">get_neuman_neighborhood</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">grid_shape</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Окрестность фон-Неймана.&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">get_neuman_neighborhood</span><span class="p">(</span><span class="n">cell</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+                            <span class="n">ca_shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Вернуть индексы окрестных ячеек клетки `cell = (i, j)`</span>
+<span class="sd">    для случая окрестности фон-Неймана.</span>
+<span class="sd">    </span>
+<span class="sd">    Размеры КА `ca_shape = (h, w)` используются для определения</span>
+<span class="sd">    индексов, вышедших за границы КА (массива `ca`).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
-    <span class="c1"># Вернуть индексы окрестных ячеек</span>
     <span class="k">return</span> <span class="o">...</span>
 </pre></div>
 </div>
@@ -626,8 +690,8 @@ document.write(`
         <span class="c1"># Количество пустых клеток на временных шагах</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a_e</span> <span class="o">=</span> <span class="p">[]</span>
     
-    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">ca</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Добавить данные КА `ca` в на шаге времени `t`.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ca</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Добавить состояние КА `ca` в момент времени `t`.&quot;&quot;&quot;</span>
         <span class="k">pass</span>
     
     <span class="k">def</span> <span class="nf">plot_firing_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
@@ -660,14 +724,22 @@ document.write(`
 <p>Для запуска моделирования предлагается описать отдельную функцию, принимающую на вход КА <code class="docutils literal notranslate"><span class="pre">ca</span></code> и тип окрестности <code class="docutils literal notranslate"><span class="pre">neighborhood_type</span></code> и возвращающую накопленную статистику:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">neighborhood_type</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Смоделировать процесс лесного пожара.&quot;&quot;&quot;</span>
-    <span class="n">stat</span> <span class="o">=</span> <span class="n">Statistics</span><span class="p">()</span>
-    <span class="c1"># В цикле по времени от 0 до sim_time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="n">ca</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+             <span class="n">nt</span><span class="p">:</span> <span class="n">NeighborhoodType</span><span class="p">,</span>
+             <span class="n">time</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Смоделировать процесс лесного пожара.</span>
+<span class="sd">    </span>
+<span class="sd">    * `ca` - матрица начального состояния КА.</span>
+<span class="sd">    * `nt` - тип окрестности.</span>
+<span class="sd">    * `time` - число шагов моделирования по времени</span>
+<span class="sd">      (время моделирования).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">st</span> <span class="o">=</span> <span class="n">Statistics</span><span class="p">()</span>
+    <span class="c1"># В цикле по времени от 0 до time</span>
     <span class="c1"># вызываем функцию обновления КА</span>
-    <span class="c1"># и добавляем результат в статистику.</span>
+    <span class="c1"># и добавляем результат в статистику stats.</span>
     <span class="k">pass</span>
-    <span class="k">return</span> <span class="n">stat</span>
+    <span class="k">return</span> <span class="n">st</span>
 </pre></div>
 </div>
 </div>
@@ -704,13 +776,14 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Создаём &quot;пустой&quot; КА</span>
 <span class="n">ca</span> <span class="o">=</span> <span class="n">create_ca</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
 <span class="c1"># Задаём начальное состояние КА</span>
-<span class="n">init_state</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">eta</span><span class="p">)</span>
+<span class="n">init_state</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 <span class="c1"># Также стоит запомнить исходное состояние</span>
 <span class="n">initial_ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
 <span class="c1"># Симулируем.</span>
 <span class="c1"># В данном случае рассматриваем &quot;+&quot;-окрестность</span>
-<span class="n">stat</span> <span class="o">=</span> <span class="n">simulate</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">NeighborhoodType</span><span class="o">.</span><span class="n">CROSS</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">simulate</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">NeighborhoodType</span><span class="o">.</span><span class="n">CROSS</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 <span class="c1"># Обрабатываем результаты, строим графики и пр.</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
