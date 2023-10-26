@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -79,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -139,13 +149,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Лабораторные работы по курсу компьютерного моделирования - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Лабораторные работы по курсу компьютерного моделирования - Home"/>`);</script>
   
   
 </a></div>
@@ -320,10 +331,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -331,7 +342,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -360,23 +371,20 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Описание задачи</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Методические указания</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Модель камня (бомбы)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Модель извержения (разлёта камней)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Извержение</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Столкновение</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Момент столкновения камней</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Расчёт скоростей после столкновения</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Начальные положение и скорость камня</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Свободный полёт камня</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-time">Расчёт времени столкновения камней</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision">Модель столкновения камней</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating">Обновление траекторий столкнувшихся камней</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Указания к реализации дискретно-событийной модели</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Приземление</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-template">Шаблон кода</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Визуализация</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Шаблон кода</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Визуализация</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Рекомендации</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">См. также</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Рекомендации</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">См. также</a></li>
 </ul>
             </nav>
         </div>
@@ -395,13 +403,11 @@ document.write(`
 <h2>Описание задачи<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Смоделировать процесс разлёта камней из кратера вулкана при его извержении, получив в результате координаты точек падения камней на горизонтальную плоскость <span class="math notranslate nohighlight">\(z=0\)</span>.
 Пространство трёхмерно, оси <span class="math notranslate nohighlight">\(Ox\)</span> и <span class="math notranslate nohighlight">\(Oy\)</span> лежат в горизонтальной плоскости, ось <span class="math notranslate nohighlight">\(Oz\)</span> направлена вертикально вверх.</p>
-<p>Используйте дискретно-событийный подход к моделированию извержения.
-В этом может помочь библиотека <a class="reference external" href="https://simpy.readthedocs.io/en/latest/index.html">SimPy</a>.</p>
 <p>Процесс извержения характеризуется следующими параметрами:</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H &gt; 0\)</span> - высота вулкана;</p></li>
+<li><p><span class="math notranslate nohighlight">\(D_{\rm c}\)</span> - глубина кратера относительно вершины вулкана;</p></li>
 <li><p><span class="math notranslate nohighlight">\(R_{\rm c}\)</span> - радиус кратера;</p></li>
-<li><p><span class="math notranslate nohighlight">\(D_{\rm c}\)</span> - глубина кратера;</p></li>
-<li><p><span class="math notranslate nohighlight">\(H &gt; 0\)</span> - высота кратера над горизонтальной плоскостью;</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mu_v\)</span> и <span class="math notranslate nohighlight">\(\sigma_v\)</span> - параметры нормального распределения <em>величины</em> скорости камней: <span class="math notranslate nohighlight">\(v = \|\vec v\| \sim \mathcal{N}(\mu_v, \sigma_v)\)</span>, где <span class="math notranslate nohighlight">\(\vec v\)</span> - вектор скорости камня;</p></li>
 <li><p><span class="math notranslate nohighlight">\(\varphi \in [0, 2\pi]\)</span> - диапазон разлёта бомб по углу азимута;</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mu_\theta\)</span> и <span class="math notranslate nohighlight">\(\sigma_\theta\)</span> - параметры нормального распределения угла возвышения (наклона к горизонту) вектора скорости камней: <span class="math notranslate nohighlight">\(\theta \sim \mathcal{N}(\mu_\theta, \sigma_\theta)\)</span>;</p></li>
@@ -410,8 +416,6 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\beta_{\rm erup}\)</span> - среднее время между выбросами камней при извержении.
 Случайная величина временного промежутка между выбросами <span class="math notranslate nohighlight">\(\Delta t_{\rm erup}\)</span> распределена по экспоненциальному закону с параметром <span class="math notranslate nohighlight">\(\beta_{\rm erup}\)</span>.</p></li>
 </ul>
-<p>При извержении новые <em>бомбы</em> (камни) добавляются в список <code class="docutils literal notranslate"><span class="pre">flyings</span></code> (летящие).
-При приземлении камень убирается из списка <code class="docutils literal notranslate"><span class="pre">flyings</span></code> и добавляется в список приземлившихся <code class="docutils literal notranslate"><span class="pre">fallens</span></code> (упавшие).</p>
 <p><strong>Задачи</strong> работы:</p>
 <ol class="arabic simple">
 <li><p>Создать компьютерную модель процесса извержения вулкана.
@@ -420,143 +424,296 @@ document.write(`
 Требования к отчёту см. во <a class="reference internal" href="intro.html#intro-report"><span class="std std-ref">введении</span></a>.
 Привести значения параметров (исходных данных и пр.) модели, полученные результаты в виде графика аналогичного графику, показанному на лекциях, а также проанализировать полученные результаты.</p></li>
 </ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Используйте дискретно-событийный подход к моделированию извержения.
+В этом может помочь библиотека <a class="reference external" href="https://simpy.readthedocs.io/en/latest/index.html">SimPy</a>.</p>
+</div>
 </section>
 <section id="id2">
 <h2>Методические указания<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Предполагается, что все камни (бомбы) имееют форму шара.
+Радиусы <span class="math notranslate nohighlight">\(R\)</span> камней случайны и подчиняются равномерному закону распределения: <span class="math notranslate nohighlight">\(R \in [R_{\rm min}; R_{\rm max}]\)</span>.
+Масса камня <span class="math notranslate nohighlight">\(m = \rho V = \rho \cdot \frac{4}{3} \pi R^3\)</span>.
+Его траектория описывается радиус-вектором
+<span class="math notranslate nohighlight">\(\mathbf{r} = (\
+    \begin{matrix}
+        x &amp; y &amp; z
+    \end{matrix}
+)\)</span> и вектором скорости
+<span class="math notranslate nohighlight">\(\mathbf{v} = \mathrm{d} \mathbf{r} / \mathrm{d} t = (
+    \begin{matrix}
+        v_x &amp; v_y &amp; v_z
+    \end{matrix}
+)\)</span>.</p>
 <section id="id3">
-<h3>Модель камня (бомбы)<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<p>Бомба имеет форму шара радиуса <span class="math notranslate nohighlight">\(R\)</span>, массу <span class="math notranslate nohighlight">\(m = \rho V = \rho \cdot \frac{4}{3} \pi R^3\)</span>.
-Её положение и движение описываются радиус-вектором <span class="math notranslate nohighlight">\(\vec{r}(t)\)</span> и вектором скорости <span class="math notranslate nohighlight">\(\vec{v}(t)\)</span> соответственно.</p>
-<p>Класс камня может иметь флаг <code class="docutils literal notranslate"><span class="pre">is_collided</span></code>, указывающий на то, сталкивался ли камень (<code class="docutils literal notranslate"><span class="pre">True</span></code>) или нет (<code class="docutils literal notranslate"><span class="pre">False</span></code>).
-Это пригодится на этапе обработки результатов.</p>
+<h3>Начальные положение и скорость камня<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Исходя из условия задачи, необходимо сгенерировать случайные радиус-вектор (координаты) <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> и вектор начальной скорости камня <span class="math notranslate nohighlight">\(\mathbf{v}_0\)</span>.</p>
+<p>Начальный радиус-вектор камня:
+<span class="math notranslate nohighlight">\(\mathbf{r}_0 = (\begin{matrix}x_0 &amp; y_0 &amp; z_0 \end{matrix})\)</span>.
+Для его получения можно сгенерировать случайную (с равномерным законом) величину расстояния <span class="math notranslate nohighlight">\(d\)</span> камня от оси кратера в пределах от <span class="math notranslate nohighlight">\(0\)</span> до <span class="math notranslate nohighlight">\(R_{\rm c}\)</span>.
+Затем сгенерировать случайный угол азимута <span class="math notranslate nohighlight">\(\alpha\)</span>, распределённый равномерно от <span class="math notranslate nohighlight">\(0\)</span> до <span class="math notranslate nohighlight">\(2 \pi\)</span>.
+Данный угол отсчитывается от положительного направления оси <span class="math notranslate nohighlight">\(Ox\)</span>.
+Глубина (координата <span class="math notranslate nohighlight">\(z_0\)</span>) камня - случайная величина с равномерным распределением от <span class="math notranslate nohighlight">\(H - D_{\rm c}\)</span> до <span class="math notranslate nohighlight">\(H\)</span>.
+По полученным значениям формируем начальный радиус-вектор камня:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r}_0 = (
+    \begin{matrix}
+    d \cos{\alpha} &amp; d \sin{\alpha} &amp; z_0
+    \end{matrix}
+).
+\]</div>
+<p>Далее, формируем случайный вектор начальной скорости.
+Величина (длина) этого вектора <span class="math notranslate nohighlight">\(v_0\)</span> - случайная величина, распределённая по нормальному закону (см. условие задачи).
+Также, согласно условию задачи, генерируются случайные величины углов <span class="math notranslate nohighlight">\(\varphi\)</span> и <span class="math notranslate nohighlight">\(\theta\)</span>.
+Угол азимута <span class="math notranslate nohighlight">\(\varphi\)</span> отсчитывается от положительного направления оси <span class="math notranslate nohighlight">\(Ox\)</span>, угол места <span class="math notranslate nohighlight">\(\theta\)</span> - от горизонтальной плоскости в положительном направлении оси <span class="math notranslate nohighlight">\(Oz\)</span>.
+Вектор скорости тогда:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{v}_0 = (
+    \begin{matrix}
+    v_0 \cos{\theta} \cos{\varphi} &amp;
+    v_0 \cos{\theta} \sin{\varphi} &amp;
+    v_0 \sin{\theta}
+    \end{matrix}
+).
+\]</div>
+<p>Тем самым мы однозначно определили траекторию движения камня.</p>
 </section>
 <section id="id4">
-<h3>Модель извержения (разлёта камней)<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
-<p>Траектория каждого камня описывается законом движения свободно падающего тела:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{split}
-\vec r(\tau)
-    &amp;= \vec r(0) + \vec v(0) \tau + \frac{\vec{g} \tau^2}{2} = \\
-    &amp;= \vec{r}_0 + \vec{v}_0 \tau + \frac{\vec{g} \tau^2}{2},
-\end{split}
-\end{split}\]</div>
-<p>где
-<span class="math notranslate nohighlight">\(\tau\)</span> - <em>собственное</em> (относительное) время камня: <span class="math notranslate nohighlight">\(\tau = t - t_{\rm b}\)</span> и <span class="math notranslate nohighlight">\(0 \le \tau \le t_\mathrm{g}\)</span>;
-<span class="math notranslate nohighlight">\(t\)</span> - глобальное время: <span class="math notranslate nohighlight">\(t \ge 0\)</span>;
-<span class="math notranslate nohighlight">\(t_{\rm b}\)</span> - глобальное время извержения камня;
-<span class="math notranslate nohighlight">\(t_\mathrm{g}\)</span> - глобальное время падения камня на землю;
-<span class="math notranslate nohighlight">\(\vec g = (0, 0, -9.81)\)</span> м/с<span class="math notranslate nohighlight">\(^2\)</span> - вектор ускорения свободного падения.</p>
-<p>Этот же закон можно записать и в глобальном времени <span class="math notranslate nohighlight">\(t\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-\vec r(t) =
-    \vec{r}_0 + \vec{v}_0 \tau(t) + \frac{\vec{g} \tau^2(t)}{2},
+<h3>Свободный полёт камня<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>Сопротивление воздуха не учитывается.
+Следовательно, все камни летят по параболам как тела, брошенные под углом к горизонту.
+Зная начальное положение каждого камня <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> и вектор его начальной скорости <span class="math notranslate nohighlight">\(\mathbf{v}_0\)</span>, мы знаем всю траекторию движения камня:</p>
+<div class="math notranslate nohighlight" id="equation-traj-eq">
+<span class="eqno">(1)<a class="headerlink" href="#equation-traj-eq" title="Permalink to this equation">#</a></span>\[
+\mathbf{r}(\tau) = \mathbf{r}_0 + \mathbf{v}_0 \tau + \cfrac{\mathbf{g} \tau^2}{2},
 \]</div>
-</section>
-<section id="id5">
-<h3>Извержение<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
-<p>Процесс извержения характеризуется</p>
-<ul class="simple">
-<li><p>средним временем между выбросами <span class="math notranslate nohighlight">\(\beta_{\rm erup}\)</span> и</p></li>
-<li><p>числом <span class="math notranslate nohighlight">\(N &gt; 0\)</span> выбрасываемых при этом камней.</p></li>
-</ul>
-<p>Случайная величина времени между двумя соседними выбросами <span class="math notranslate nohighlight">\(\Delta t_{\rm erup}\)</span> распределена по экспоненциальному закону с функцией плотности вероятности</p>
 <div class="math notranslate nohighlight">
 \[
-\Delta t_{\rm erup} \sim
+\mathbf{v}(\tau) = \cfrac{\mathrm{d} \mathbf{r}}{\mathrm{d} \tau}
+    = \mathbf{v}_0 + \mathbf{g} \tau,
+\]</div>
+<p>где
+<span class="math notranslate nohighlight">\(\mathbf{r}\)</span> - радиус-вектор (координата) камня: <span class="math notranslate nohighlight">\(\mathbf{r} = (
+    \begin{matrix}
+        x &amp; y &amp; z
+    \end{matrix}
+)\)</span>;
+<span class="math notranslate nohighlight">\(\mathbf{g}\)</span> - вектор ускорения свободного падения: <span class="math notranslate nohighlight">\(\mathbf{g} = (
+    \begin{matrix}
+        0 &amp; 0 &amp; -9.81
+    \end{matrix}
+)\)</span> м/с<span class="math notranslate nohighlight">\(^2\)</span>;
+<span class="math notranslate nohighlight">\(\tau\)</span> - относительное время полёта камня: <span class="math notranslate nohighlight">\(\tau = t - t_0\)</span>;
+<span class="math notranslate nohighlight">\(t\)</span> - глобальное время - обновляется обработчиком событий;
+<span class="math notranslate nohighlight">\(t_0\)</span> - глобальное время вылета камня из кратера.</p>
+<p>Время вылета камня <span class="math notranslate nohighlight">\(t_0\)</span> - это время соответствующего выброса <span class="math notranslate nohighlight">\(t_{\rm erup}\)</span>, которое, согласно условию задачи, является случайной величиной с экспоненциальным законом распределения.
+Условимся, что первый выброс происходит в самом начале, т.е. при <span class="math notranslate nohighlight">\(t = 0\)</span>.
+Следующий выброс случится через случайный промежуток времени <span class="math notranslate nohighlight">\(\Delta t_{\rm erup}\)</span>, причём функция плотности вероятности величины этого промежутка имеет вид:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho_{\rm erup}(\Delta t_{\rm erup}) =
     \cfrac{1}{\beta_{\rm erup}} \exp{\left( -\cfrac{\Delta t_{\rm erup}}{\beta_{\rm erup}} \right)}.
 \]</div>
-<p>При выбросе (при событии <code class="docutils literal notranslate"><span class="pre">ERUPTION</span></code>):</p>
-<ol class="arabic simple">
-<li><p>Генерируется <span class="math notranslate nohighlight">\(N\)</span> новых бомб.</p></li>
-<li><p>Рассчитывается абсолютное время <span class="math notranslate nohighlight">\(t_{\rm g}\)</span> их падения на землю, т.е. достижение высоты <span class="math notranslate nohighlight">\(z=0\)</span>.</p></li>
-<li><p>Для каждой новой бомбы рассчитывается ближайший момент времени <span class="math notranslate nohighlight">\(t_{\rm col}\)</span>, когда она столкнётся с любой бомбой из списка <code class="docutils literal notranslate"><span class="pre">flyings</span></code>.</p></li>
-<li><p>После этого новая бомба добавляется в список <code class="docutils literal notranslate"><span class="pre">flyings</span></code>.</p></li>
-</ol>
-</section>
-<section id="id6">
-<h3>Столкновение<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
-<p>При столкновении двух бомб <span class="math notranslate nohighlight">\(B_1\)</span> и <span class="math notranslate nohighlight">\(B_2\)</span> (при событии <code class="docutils literal notranslate"><span class="pre">COLLISION</span></code>):</p>
-<ol class="arabic simple">
-<li><p>Очищается очередь событий, связанных с бомбами <span class="math notranslate nohighlight">\(B_1\)</span> и <span class="math notranslate nohighlight">\(B_2\)</span>.</p></li>
-<li><p>Обновляются векторы начальных скоростей <span class="math notranslate nohighlight">\(\vec v^{B_1}_0\)</span> и <span class="math notranslate nohighlight">\(\vec v^{B_2}_0\)</span> и радиус-векторы начального положения <span class="math notranslate nohighlight">\(\vec r^{B_1}_0\)</span> и <span class="math notranslate nohighlight">\(\vec r^{B_2}_0\)</span> бомб <span class="math notranslate nohighlight">\(B_1\)</span> и <span class="math notranslate nohighlight">\(B_2\)</span>.</p></li>
-<li><p>Пересчитываются времена падения <span class="math notranslate nohighlight">\(t^{B_1}_{\rm g}\)</span> и <span class="math notranslate nohighlight">\(t^{B_2}_{\rm g}\)</span> бомб <span class="math notranslate nohighlight">\(B_1\)</span> и <span class="math notranslate nohighlight">\(B_2\)</span>.</p></li>
-<li><p>Пересчитываются моменты времени столкновения <span class="math notranslate nohighlight">\(t^{B_1}_{\rm col}\)</span> и <span class="math notranslate nohighlight">\(t^{B_2}_{\rm col}\)</span> бомб <span class="math notranslate nohighlight">\(B_1\)</span> и <span class="math notranslate nohighlight">\(B_2\)</span> с другими камнями из списка <code class="docutils literal notranslate"><span class="pre">flyings</span></code>.</p></li>
-</ol>
-<section id="id7">
-<h4>Момент столкновения камней<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
-<p>Камни <span class="math notranslate nohighlight">\(B_1\)</span> и <span class="math notranslate nohighlight">\(B_2\)</span> сталкиваются, если расстояние между их центрами равно сумме их радиусов <span class="math notranslate nohighlight">\(R_1\)</span> и <span class="math notranslate nohighlight">\(R_2\)</span>, т.е.</p>
+<p>Аналогично получается случайный промежуток времени между вторым и третьим выбросом, третьим и четвёртым и т.д.
+Другими словами, время выброса камней в некотором <span class="math notranslate nohighlight">\(n\)</span>-м выбросе, <span class="math notranslate nohighlight">\(n &gt; 0\)</span>, есть:</p>
 <div class="math notranslate nohighlight">
 \[
-\| \vec r_1(t) - \vec r_2(t) \| = R_1 + R_2.
+t_{0 n} = \sum\limits_{i=0}^{n-1}{\Delta t_{{\rm erup} \, i}},
 \]</div>
-<p>При численном решении данного уравнения определяется момент столкновения камней <span class="math notranslate nohighlight">\(t_{\rm col}\)</span>.
-Способы численного решения уравнений в Python можно найти в <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/mathematics/ch1-rooting.html">справочнике</a>.</p>
+<p>причём <span class="math notranslate nohighlight">\(\Delta t_{{\rm erup} \, 0} = 0\)</span>.
+Относительное время при этом: <span class="math notranslate nohighlight">\(\tau_n = t - t_{0 n}\)</span>.</p>
+<p>Зная траекторию, мы можем вычислить время, через которое камень упадёт на землю (когда <span class="math notranslate nohighlight">\(z=0\)</span>).
+Для этого нужно решить квадратное уравнение <a class="reference internal" href="#equation-traj-eq">(1)</a> относительно <span class="math notranslate nohighlight">\(\tau\)</span> и выбрать корень <span class="math notranslate nohighlight">\(\Delta \tau_{\rm g}\)</span>, имеющий физический смысл, т.е. <span class="math notranslate nohighlight">\(\Delta \tau_{\rm g} &gt; 0\)</span>.
+Учтя, что камни вылетают из кратера в направлении “вверх” (<span class="math notranslate nohighlight">\(v_{0z} &gt; 0\)</span>) и проекция <span class="math notranslate nohighlight">\(g_z\)</span> всегда отрицательна, получим:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta \tau_{\rm g} =
+    \cfrac{-v_{0z} - \sqrt{v_{0z}^2 - 2 g_z z}}{g_z},
+\]</div>
+<p>где нижними индексами <span class="math notranslate nohighlight">\(z\)</span> обозначены проекции векторов на вертикальную ось <span class="math notranslate nohighlight">\(Oz\)</span>.
+Рассчитываемая таким образом задержка вдальнейшем используется для создания события приземления камня.</p>
+<p>Далее необходимо научиться учитывать столкновения камней.
+Для этого сначала сформируем метод расчёта времени столкновения, а затем построим модель столкновения на основе закона сохранения импульса.</p>
+</section>
+<section id="collision-time">
+<span id="id5"></span><h3>Расчёт времени столкновения камней<a class="headerlink" href="#collision-time" title="Permalink to this heading">#</a></h3>
+<p>Рассмотрим два камня 1 и 2.
+Условием столкновения камней является сближение их центров на расстояние, равное сумме их радиусов, т.е.:</p>
+<div class="math notranslate nohighlight">
+\[
+\| \mathbf{r}_2(t_{\rm col}) - \mathbf{r}_1(t_{\rm col}) \| = R_1 + R_2
+\]</div>
+<p>или, возведя обе части в квадрат,</p>
+<div class="math notranslate nohighlight" id="equation-collision-cond">
+<span class="eqno">(2)<a class="headerlink" href="#equation-collision-cond" title="Permalink to this equation">#</a></span>\[
+\| \mathbf{r}_2(t_{\rm col}) - \mathbf{r}_1(t_{\rm col}) \|^2 - (R_1 + R_2)^2 = 0,
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(t_{\rm col}\)</span> - момент (глобального) времени столкновения камней.
+Уравнение <a class="reference internal" href="#equation-traj-eq">(1)</a> для условия <a class="reference internal" href="#equation-collision-cond">(2)</a> не подходит, т.к. сталкиваться могут любые летящие камни, в том числе и вылетевшие в разных выбросах. Следовательно, относительное время камней может быть различным: <span class="math notranslate nohighlight">\(\tau_1 \ne \tau_2\)</span>.
+Поэтому уравнение движения <a class="reference internal" href="#equation-traj-eq">(1)</a> нужно записать в глобальном времени:</p>
+<div class="math notranslate nohighlight" id="equation-traj-eq-t">
+<span class="eqno">(3)<a class="headerlink" href="#equation-traj-eq-t" title="Permalink to this equation">#</a></span>\[
+\mathbf{r}(t) = \mathbf{r}_0 + \mathbf{v}_0 (t - t_0) + \cfrac{\mathbf{g} (t - t_0)^2}{2}.
+\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Важно помнить, что камни разичных выбросов имеют собственное значение времени выброса <span class="math notranslate nohighlight">\(t_0\)</span>.</p>
+</div>
+<p>Таким образом, подставляя уравнение движения <a class="reference internal" href="#equation-traj-eq-t">(3)</a> в условие столкновения двух камней <a class="reference internal" href="#equation-collision-cond">(2)</a>, получаем уравнение, из которого можем получить время столкновения <span class="math notranslate nohighlight">\(t_{\rm col}\)</span>.
+Расписав это векторное уравнение по координатам, получим:</p>
+<div class="math notranslate nohighlight" id="equation-collision-cond-xyz">
+<span class="eqno">(4)<a class="headerlink" href="#equation-collision-cond-xyz" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{split}
+&amp; [x_{2 \, 0} + v_{2x \, 0} (t_{\rm col} - t_{2 \, 0})
+    - x_{1 \, 0} - v_{1x \, 0} (t_{\rm col} - t_{1 \, 0})]^2 + \\
+&amp; + [y_{2 \, 0} + v_{2y \, 0} (t_{\rm col} - t_{2 \, 0})
+    - y_{1 \, 0} - v_{1y \, 0} (t_{\rm col} - t_{1 \, 0})]^2 + \\
+&amp; + \left[ z_{2 \, 0} + v_{2z \, 0} (t_{\rm col} - t_{2 \, 0}) + \cfrac{g_z (t_{\rm col} - t_{2 \, 0})^2}{2}
+    - z_{1 \, 0} - v_{1z \, 0} (t_{\rm col} - t_{1 \, 0}) - \cfrac{g_z (t_{\rm col} - t_{1 \, 0})^2}{2} \right]^2 = \\
+&amp; - (R_1 + R_2)^2 = 0.
+\end{split}
+\end{split}\]</div>
+<p>Это квадратное уравнение относительно времени <span class="math notranslate nohighlight">\(t_{\rm col}\)</span>.
+Отыскание корня в этом случае - задача несложная, требующая только внимательности и аккуратности.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Уравнение столкновения является обычным квадратным уравнением, поэтому его можно решить аналитически.
-Только итоговая формула будет громоздкой.</p>
+<p>Решить уравнение <a class="reference internal" href="#equation-collision-cond-xyz">(4)</a> можно и численно, однако в реальных задачах это является дополнительной вычислительной нагрузкой.
+Если можно сформулировать <em>точное</em> решение, то лучше дать вычислителю готовую формулу, чем заставлять его итеративно искать <em>приближённое</em> решение.
+В данном случае уравнение простое, и численное решение может быть таким же быстрым, как и аналитическое, которое в данном случае имеет довольно громоздкий вид.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Способы численного решения уравнений в Python можно найти в <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/mathematics/ch1-rooting.html">справочнике</a>.</p>
+</div>
+<p>При расчёте времени столкновения возможны следующие случаи:</p>
+<ol class="arabic simple">
+<li><p>Вещественного корня нет - траектории камней не пересекаются.</p></li>
+<li><p>Время столкновения больше времени полёта одного из камней - один из камней упадёт раньше, чем столкнётся.</p></li>
+<li><p>Время столкновения меньше, чем время начала полёта одного из камней - один из камней в рассчитанный момент времени ещё лежал в кратере.</p></li>
+<li><p>В рассчитанный момент времени оба камня находятся в полёте.</p></li>
+</ol>
+<p>Из всех перечисленных случаев интерес представляет только последний.
+Рассчитав время столкновения для всех пар летящих камней, мы выбираем ближайший момент времени - это и будет ближайшим событием типа “столкновение”.</p>
+<p>Получив таким образом время <span class="math notranslate nohighlight">\(t_{\rm col}\)</span>, мы можем рассчитать координаты <span class="math notranslate nohighlight">\(\mathbf{r}_{\rm col}\)</span> и скорости <span class="math notranslate nohighlight">\(\mathbf{v}_{\rm col}\)</span> сталкивающихся камней непосредственно перед столкновением.</p>
 </section>
-<section id="id8">
-<h4>Расчёт скоростей после столкновения<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
-<p>Скорость сближения (<em>closing</em>) тел в момент удара</p>
+<section id="collision">
+<span id="id6"></span><h3>Модель столкновения камней<a class="headerlink" href="#collision" title="Permalink to this heading">#</a></h3>
+<p>Модель столкновения двух камней основана на законе сохранения импульса.</p>
+<p>Величина скорости сближения (<em>closing</em>) тел в момент удара</p>
 <div class="math notranslate nohighlight">
 \[
 v_{\rm c} =
-    -\left[ \vec{v}_1(t_{\rm col}) - \vec{v}_2(t_{\rm col}) \right]
-    \cdot \vec{n},
+    \left( \mathbf{v}_{{\rm col} 2} - \mathbf{v}_{{\rm col} 1} \right)
+    \cdot \mathbf{n},
 \]</div>
-<p>где <span class="math notranslate nohighlight">\(\vec{n}\)</span> - вектор единичной нормали при столкновении:</p>
+<p>где <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> - вектор единичной нормали при столкновении:</p>
 <div class="math notranslate nohighlight">
 \[
-\vec n =
-    \cfrac
-    {\vec r_1(t_{\rm col}) - \vec r_2(t_{\rm col})}
-    {\| \vec r_1(t_{\rm col}) - \vec r_2(t_{\rm col}) \|}.
+\mathbf{n}
+    = \cfrac
+    {\mathbf{r}_{{\rm col} 1} - \mathbf{r}_{{\rm col} 2}}
+    {\| \mathbf{r}_{{\rm col} 1} - \mathbf{r}_{{\rm col} 2} \|}
+    = \cfrac
+    {\mathbf{r}_{{\rm col} 1} - \mathbf{r}_{{\rm col} 2}}
+    {R_1 + R_2}.
 \]</div>
-<p>Скорость разлёта (<em>separating</em>) тел до столкновения</p>
-<div class="math notranslate nohighlight">
-\[v_{\rm s} = -v_{\rm c}\]</div>
-<p>и после него</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Как известно, скалярное произведение двух векторов - это проекция длины одного вектора на направление другого.
+В данном случае речь идёт о проекции разности скоростей камней на направление (единичный вектор) общей нормали.</p>
+</div>
+<p>Скорость разлёта (<em>separating</em>) тел до и после столкновения соответственно:</p>
 <div class="math notranslate nohighlight">
 \[
-v_{\rm s}' = -c v_{\rm s},
+v_{\mathrm{s} 0} = -v_{\rm c}
 \]</div>
-<p>где <span class="math notranslate nohighlight">\(c\)</span> - коэффициент восстановления: <span class="math notranslate nohighlight">\(0 \le c \le 1\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+v_{\rm s} = k_p v_{\rm c},
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(k_p\)</span> - коэффициент восстановления: <span class="math notranslate nohighlight">\(k_p \in [0; 1]\)</span>.</p>
 <p>Изменение скорости при ударе:</p>
 <div class="math notranslate nohighlight">
 \[
-\Delta v_{\rm s} = v_{\rm s}' - v_{\rm s}.
+\Delta v_{\rm s} = v_{\rm s} - v_{\mathrm{s} 0}.
 \]</div>
 <p>Вектор полного импульса:</p>
 <div class="math notranslate nohighlight">
-\[\vec p = \cfrac{m_1 m_2}{m_1 + m_2} \Delta v_{\rm s} \cdot \vec n.\]</div>
+\[
+\mathbf{p} = \cfrac{m_1 m_2}{m_1 + m_2} \Delta v_{\rm s} \mathbf{n}.
+\]</div>
 <p>Следовательно, исходя из закона сохранения импульса, возможно рассчитать скорость каждого тела после столкновения:</p>
 <div class="math notranslate nohighlight">
-\[\vec v_1' = \vec v_1 + \cfrac{\vec p}{m_1},\]</div>
+\[
+\mathbf{v}_1' = \mathbf{v}_1 + \cfrac{\mathbf{p}}{m_1},
+\]</div>
 <div class="math notranslate nohighlight">
-\[\vec v_2' = \vec v_2 - \cfrac{\vec p}{m_2}.\]</div>
+\[
+\mathbf{v}_2' = \mathbf{v}_2 - \cfrac{\mathbf{p}}{m_2}.
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Знаки в представленных расчётных формулах необходимо строго соблюдать.
+Знаки проекций векторных величин нас не интересуют - они могут быть любыми.
+Обычная векторная алгебра.</p>
+</div>
 </section>
-</section>
-<section id="id9">
-<h3>Приземление<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
-<p>При приземлении камня (событие <code class="docutils literal notranslate"><span class="pre">GROUND</span></code>):</p>
+<section id="updating">
+<span id="id7"></span><h3>Обновление траекторий столкнувшихся камней<a class="headerlink" href="#updating" title="Permalink to this heading">#</a></h3>
+<p>При наступлении события “столкновение” важно сделать следующее:</p>
 <ol class="arabic simple">
-<li><p>Очищается очередь событий, связанных с этим камнем.</p></li>
-<li><p>Камень переносится из списка <code class="docutils literal notranslate"><span class="pre">flyings</span></code> в список <code class="docutils literal notranslate"><span class="pre">fallens</span></code>.</p></li>
+<li><p>Заменить начальный радиус-вектор <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> и вектор начальной скорости <span class="math notranslate nohighlight">\(\mathbf{v}_0\)</span> двух камней на <span class="math notranslate nohighlight">\(\mathbf{r}(t_{\rm col})\)</span> (согласно <a class="reference internal" href="#equation-traj-eq-t">(3)</a>) и <span class="math notranslate nohighlight">\(\mathbf{v}'\)</span> соответственно.
+Также необходимо заменить время <span class="math notranslate nohighlight">\(t_0\)</span> каждого камня на время столкновения <span class="math notranslate nohighlight">\(t_{\rm col}\)</span>.
+Тем самым мы сможем строить траектории камней после их столкновения.</p></li>
+<li><p>Для столкнувшихся камней пересчитать моменты времени их падения на землю и создать соответствующие события типа “приземление”.
+При этом все предыдущие события и процессы для этих камней необходимо удалить из очереди событий.
+Делается это с помощью метода <code class="docutils literal notranslate"><span class="pre">interrupt</span></code> объекта события (класса <code class="docutils literal notranslate"><span class="pre">simpy.Event</span></code>).
+Для упрощения задачи рекомендуется все события и процессы ассоциировать с конкретным камнем, например, с помощью словаря (см. словарь <code class="docutils literal notranslate"><span class="pre">processes</span></code> в разделе <a class="reference internal" href="#code-template"><span class="std std-ref">Шаблон кода</span></a>).</p></li>
+<li><p>Для всех пар <em>летящих</em> камней пересчитать время ближайшего столкновения.
+Уже столкнувшиеся камни ничем принципиально не отличаются от всех остальных - они вновь могут столкнуться с любыми другими летящими камнями.</p></li>
 </ol>
-<p>В конце симуляции координаты упавших камней берутся из массива <code class="docutils literal notranslate"><span class="pre">fallens</span></code> и отображаются на графике, а именно, на виде сверху.
-Начало системы отчёта располагается в центре кратера.</p>
 </section>
-</section>
-<section id="id10">
-<h2>Шаблон кода<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="id8">
+<h3>Указания к реализации дискретно-событийной модели<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>Предлагается создать программу моделирования на основе библиотеки для дискретно-событийного моделирования <a class="reference external" href="https://simpy.readthedocs.io/en/latest/index.html">SimPy</a>.
 Основы написания программ с её использованием вы найдёте в <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/discrete-event.html">справочнике</a>.</p>
+<p>В сформированной модели определены три типа событий:</p>
+<ul class="simple">
+<li><p>выброс - <code class="docutils literal notranslate"><span class="pre">ERUPTION</span></code>;</p></li>
+<li><p>приземление камня - <code class="docutils literal notranslate"><span class="pre">GROUND</span></code>;</p></li>
+<li><p>столкновение двух камней - <code class="docutils literal notranslate"><span class="pre">COLLISION</span></code>.</p></li>
+</ul>
+<p>Какие действия каким событиям соответствуют:</p>
+<ul class="simple">
+<li><p>при каждом выбросе - событии <code class="docutils literal notranslate"><span class="pre">ERUPTION</span></code> - генерируется определённое число камней, который сразу же добавляются в список летящих бомб <code class="docutils literal notranslate"><span class="pre">flyings</span></code>.
+“Генерация” камней означает их инициализацию (см. конструктор класса <code class="docutils literal notranslate"><span class="pre">Bomb</span></code> в разделе <a class="reference internal" href="#code-template"><span class="std std-ref">Шаблон кода</span></a>);</p></li>
+<li><p>при приземлении - событии <code class="docutils literal notranslate"><span class="pre">GROUND</span></code> - упавший камень удаляется из списка <code class="docutils literal notranslate"><span class="pre">flyings</span></code> и добавляется в список упавших <code class="docutils literal notranslate"><span class="pre">fallens</span></code>;</p></li>
+<li><p>при столкновении - событии <code class="docutils literal notranslate"><span class="pre">COLLISION</span></code> - необходимо рассчитать новые траектории столкнувшихся камней согласно методике, описанной в подразделах <a class="reference internal" href="#collision-time"><span class="std std-ref">Расчёт времени столкновения камней</span></a> и <a class="reference internal" href="#collision"><span class="std std-ref">Модель столкновения камней</span></a>.
+Затем произвести действия, описанные в подразделе <a class="reference internal" href="#updating"><span class="std std-ref">Обновление траекторий столкнувшихся камней</span></a>.
+За очистку событий и процессов, связанных с тем или иным камнем, отвечает функция <code class="docutils literal notranslate"><span class="pre">clear_queue</span></code> (см. раздел <a class="reference internal" href="#code-template"><span class="std std-ref">Шаблон кода</span></a>).
+Для того, чтобы можно было прерывать собственные, т.е. написанные вами, процессы, в их генераторных функциях должен быть прописан блок <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code>, обрабатывающий исключение типа <code class="docutils literal notranslate"><span class="pre">simpy.Interrupt</span></code>.
+Это исключении инициируется при вызове метода <code class="docutils literal notranslate"><span class="pre">interrupt</span></code> у объекта класса <code class="docutils literal notranslate"><span class="pre">simpy.Event</span></code> или <code class="docutils literal notranslate"><span class="pre">simpy.Process</span></code>.</p></li>
+</ul>
+<p>В классе камня <code class="docutils literal notranslate"><span class="pre">Bomb</span></code> можно предусмотреть флаг <code class="docutils literal notranslate"><span class="pre">is_collided</span></code>, который бы говорил о том, сталкивался ли камень (<code class="docutils literal notranslate"><span class="pre">True</span></code>) или нет (<code class="docutils literal notranslate"><span class="pre">False</span></code>).
+Это поможет в задаче визуализации результатов (см. <a class="reference internal" href="#visualization"><span class="std std-ref">Визуализация</span></a>).</p>
+<p>В модели необходимы следующие процессы (в терминах SimPy):</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eruption</span></code> - порождает новые камни по истечении времени <span class="math notranslate nohighlight">\(\Delta t_{\rm erup}\)</span>.
+Первый выброс происходит в начальный момент времени <span class="math notranslate nohighlight">\(t = 0\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">collision</span></code> - процесс, ожидающий момента столкновения камня с другим, т.е. наступления события <code class="docutils literal notranslate"><span class="pre">COLLISION</span></code>.
+В ответ на это событие инициирует действия: обновление траекторий, пересчёт моментов времени падения и столкновений и т.д.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ground</span></code> - процесс, ожидающий падения камня - наступления события <code class="docutils literal notranslate"><span class="pre">GROUND</span></code>.
+В ответ на это событие перемещает упавший камень из списка <code class="docutils literal notranslate"><span class="pre">fluings</span></code> в список <code class="docutils literal notranslate"><span class="pre">fallens</span></code>.</p></li>
+</ol>
+</section>
+</section>
+<section id="code-template">
+<span id="id9"></span><h2>Шаблон кода<a class="headerlink" href="#code-template" title="Permalink to this heading">#</a></h2>
 <p>Подключим необходимые и/или полезные библиотеки:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">default_rng</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">default_rng</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">root_scalar</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -613,7 +770,7 @@ v_{\rm s}' = -c v_{\rm s},
 За уникальность экземпляров <code class="docutils literal notranslate"><span class="pre">Bomb</span></code> отвечает адрес памяти, в которой каждый конкретный экземпляр хранится.</p>
 </div>
 <p>Генератор псевдослучайных чисел инициализируется, например, так:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rs</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">(</span><span class="n">PCG64</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">2103</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rs</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -731,8 +888,8 @@ v_{\rm s}' = -c v_{\rm s},
 </div>
 <p>Таким образом, создав экземпляр <code class="docutils literal notranslate"><span class="pre">sim.Environment</span></code>, вы вызываете функцию <code class="docutils literal notranslate"><span class="pre">simulate(...)</span></code> с заданными вами параметрами.
 Она в свою очередь инициализирует все необходимые процессы и запускает симуляцию внутри SimPy путём вызова <code class="docutils literal notranslate"><span class="pre">env.run()</span></code>.</p>
-<section id="id11">
-<h3>Визуализация<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<section id="visualization">
+<span id="id10"></span><h3>Визуализация<a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h3>
 <p>Универсальная функция визуализации точек падения камней:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">top_view</span><span class="p">(</span><span class="n">xy</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -750,8 +907,8 @@ v_{\rm s}' = -c v_{\rm s},
 <p><img alt="Пример результата" src="_images/result.png" /></p>
 </section>
 </section>
-<section id="id12">
-<h2>Рекомендации<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h2>Рекомендации<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Используйте функции <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.save.html"><code class="docutils literal notranslate"><span class="pre">save</span></code></a> и/или <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.savez.html"><code class="docutils literal notranslate"><span class="pre">savez</span></code></a> библиотеки NumPy для сохранения точек падения.
 В этом случае вам не нужно будет хранить все полученные данные в оперативной памяти.
@@ -762,12 +919,12 @@ v_{\rm s}' = -c v_{\rm s},
 Либо реализуйте программу согласно псевдокоду с лекции по теме дискретно-событийного моделирования.</p></li>
 </ul>
 </section>
-<section id="id13">
-<h2>См. также<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<section id="id12">
+<h2>См. также<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Основы генераторов и итераторов приведены в <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/discrete-event.html">справочнике</a>.</p></li>
 <li><p>Библиотека фреймворка дискретно-событийного моделирования <a class="reference external" href="https://simpy.readthedocs.io/en/latest/index.html">SimPy</a>.</p></li>
-<li><p>Численное решение уравнений можно найти в <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/mathematics/ch1-rooting.html">справочнике</a>. Там же содержится <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/plotting.html">информация по построению графиков</a>.</p></li>
+<li><p>Численное решение уравнений можно найти в <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/mathematics/ch1-rooting.html">справочнике</a>. Там же содержатся <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/plotting.html">основы построения графиков</a>.</p></li>
 <li><p>Требования к отчёту см. в разделе “Актуальная информация” в <a class="reference external" href="https://vk.com/bmstu_sm6">группе кафедры</a> и во <a class="reference internal" href="intro.html#intro-report"><span class="std std-ref">введении</span></a>.</p></li>
 </ol>
 </section>
@@ -798,11 +955,10 @@ v_{\rm s}' = -c v_{\rm s},
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="lab-1-ca-forest.html"
@@ -822,10 +978,7 @@ v_{\rm s}' = -c v_{\rm s},
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -842,23 +995,20 @@ v_{\rm s}' = -c v_{\rm s},
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Описание задачи</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Методические указания</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Модель камня (бомбы)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Модель извержения (разлёта камней)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Извержение</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Столкновение</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Момент столкновения камней</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Расчёт скоростей после столкновения</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Начальные положение и скорость камня</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Свободный полёт камня</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-time">Расчёт времени столкновения камней</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision">Модель столкновения камней</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating">Обновление траекторий столкнувшихся камней</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Указания к реализации дискретно-событийной модели</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Приземление</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-template">Шаблон кода</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Визуализация</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Шаблон кода</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Визуализация</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Рекомендации</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">См. также</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Рекомендации</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">См. также</a></li>
 </ul>
   </nav></div>
 
@@ -906,8 +1056,8 @@ By Федулов Вадим Алексеевич
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
 
   <footer class="bd-footer">
   </footer>
