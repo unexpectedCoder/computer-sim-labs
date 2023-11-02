@@ -399,6 +399,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="o2">
 <h1>Лабораторная работа №2. Дискретно-событийное моделирование на примере задачи вулканической баллистики<a class="headerlink" href="#o2" title="Permalink to this heading">#</a></h1>
 <p><strong>Цель</strong> работы - закрепить знания и получить опыт решения физической задачи путём компьютерного моделирования с применением дискретно-событийного подхода.</p>
+<p>Основы использования библиотеки дискретно-событийного моделирования SimPy см. <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/discrete-event/des.html">в справочнике</a>.</p>
 <section id="id1">
 <h2>Описание задачи<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Смоделировать процесс разлёта камней из кратера вулкана при его извержении, получив в результате координаты точек падения камней на горизонтальную плоскость <span class="math notranslate nohighlight">\(z=0\)</span>.
@@ -568,11 +569,11 @@ t_{0 n} = \sum\limits_{i=0}^{n-1}{\Delta t_{{\rm erup} \, i}},
 <span class="eqno">(4)<a class="headerlink" href="#equation-collision-cond-xyz" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{split}
 &amp; [x_{2 \, 0} + v_{2x \, 0} (t_{\rm col} - t_{2 \, 0})
-    - x_{1 \, 0} - v_{1x \, 0} (t_{\rm col} - t_{1 \, 0})]^2 + \\
+    - x_{1 \, 0} - v_{1x \, 0} (t_{\rm col} - t_{1 \, 0})]^2 \\
 &amp; + [y_{2 \, 0} + v_{2y \, 0} (t_{\rm col} - t_{2 \, 0})
-    - y_{1 \, 0} - v_{1y \, 0} (t_{\rm col} - t_{1 \, 0})]^2 + \\
+    - y_{1 \, 0} - v_{1y \, 0} (t_{\rm col} - t_{1 \, 0})]^2 \\
 &amp; + \left[ z_{2 \, 0} + v_{2z \, 0} (t_{\rm col} - t_{2 \, 0}) + \cfrac{g_z (t_{\rm col} - t_{2 \, 0})^2}{2}
-    - z_{1 \, 0} - v_{1z \, 0} (t_{\rm col} - t_{1 \, 0}) - \cfrac{g_z (t_{\rm col} - t_{1 \, 0})^2}{2} \right]^2 = \\
+    - z_{1 \, 0} - v_{1z \, 0} (t_{\rm col} - t_{1 \, 0}) - \cfrac{g_z (t_{\rm col} - t_{1 \, 0})^2}{2} \right]^2 \\
 &amp; - (R_1 + R_2)^2 = 0.
 \end{split}
 \end{split}\]</div>
@@ -922,7 +923,8 @@ v_{\rm s} = k_p v_{\rm c},
 <section id="id12">
 <h2>См. также<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Основы генераторов и итераторов приведены в <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/discrete-event.html">справочнике</a>.</p></li>
+<li><p>Основы генераторов и итераторов приведены в <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/discrete-event.html">справочнике</a>.
+Там же описаны <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/discrete-event/des.html">основы использования библиотеки SimPy</a>.</p></li>
 <li><p>Библиотека фреймворка дискретно-событийного моделирования <a class="reference external" href="https://simpy.readthedocs.io/en/latest/index.html">SimPy</a>.</p></li>
 <li><p>Численное решение уравнений можно найти в <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/mathematics/ch1-rooting.html">справочнике</a>. Там же содержатся <a class="reference external" href="https://unexpectedcoder.github.io/sm6-py-cookbook/plotting.html">основы построения графиков</a>.</p></li>
 <li><p>Требования к отчёту см. в разделе “Актуальная информация” в <a class="reference external" href="https://vk.com/bmstu_sm6">группе кафедры</a> и во <a class="reference internal" href="intro.html#intro-report"><span class="std std-ref">введении</span></a>.</p></li>

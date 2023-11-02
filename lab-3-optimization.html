@@ -369,9 +369,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Вариант 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Вариант 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Вариант 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Вариант 1 - Задача о рюкзаке</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Вариант 2 - Оптимизация трёхступенчатого клина</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Вариант 3 - Безопасное размещение склада боеприпасов</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Вариант 4 - Условная и безусловная оптимизация</a></li>
 </ul>
             </nav>
         </div>
@@ -386,21 +387,22 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="o3">
 <h1>Лабораторная работа №3. Задачи дискретной и непрерывной оптимизации<a class="headerlink" href="#o3" title="Permalink to this heading">#</a></h1>
 <p>Для решения задач необходимо работать с документацией применяемых библиотек и их функций.</p>
-<p>Ниже приведены <strong>варианты заданий для подгрупп</strong>, на которые равномерно разбивается группа.</p>
+<p>Ниже приведены <strong>варианты заданий для подгрупп</strong>.
+Каждая подгруппа выбирает конкретный вариант и договаривается с другими подгруппами, чтобы не было пересечений между подгруппами.</p>
 <section id="id1">
-<h2>Вариант 1<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Вариант 1 - Задача о рюкзаке<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p><strong>Цель</strong> - закрепить знания, полученные на лекции по задачам дискретной оптимизации.</p>
 <p><strong>Задача</strong> - рассмотреть и проанализировать различные подходы к решению задачи о рюкзаке, являющейся задачей дискретной оптимизации.</p>
 <p>Решить задачу о рюкзаке методами полного перебора, динамического программирования, жадным алгоритмом и случайным выбором.</p>
-<p>В отчёте также отразить особенности, достоинства и недостатки каждого из указанных подходов к решению задачи о рюкзаке и сравнить их вычислительную эффективность.</p>
+<p>В отчёте также отразить особенности, достоинства и недостатки каждого из указанных подходов к решению задачи и сравнить их вычислительную эффективность.</p>
 </section>
 <section id="id2">
-<h2>Вариант 2<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Вариант 2 - Оптимизация трёхступенчатого клина<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p><strong>Цель</strong> - закрепить знания, полученные на лекции по задачам непрерывной оптимизации.</p>
 <p><strong>Задача</strong> - решить задачу непрерывной оптимизации с ограничениями.</p>
 <p>Трёхступенчатый клин обтекается сверхзвуковым потоком воздуха.</p>
 <ol class="arabic simple">
-<li><p>Определить зависимость коэффициента восстановления полного давления <span class="math notranslate nohighlight">\(\sigma_\Sigma\)</span> от углов ступенчатого клина <span class="math notranslate nohighlight">\(\beta_1\)</span> и <span class="math notranslate nohighlight">\(\beta_2\)</span>, построить её графически. Угол <span class="math notranslate nohighlight">\(\beta_3\)</span> фиксирован. В каждой точке зависимости система скачков должна существовать (не должно быть отошедших скачков).</p></li>
+<li><p>Графически построить зависимость коэффициента восстановления полного давления <span class="math notranslate nohighlight">\(\sigma_\Sigma\)</span> от углов ступеней клина <span class="math notranslate nohighlight">\(\beta_1\)</span> и <span class="math notranslate nohighlight">\(\beta_2\)</span>, построить её графически. Угол <span class="math notranslate nohighlight">\(\beta_3\)</span> фиксирован. В каждой точке зависимости система скачков должна существовать (не должно быть отошедших скачков).</p></li>
 <li><p>Определить углы <span class="math notranslate nohighlight">\(\beta_1^*\)</span> и <span class="math notranslate nohighlight">\(\beta_2^*\)</span>, соответствующие максимальному значению коэффициента восстановления полного давления, то есть</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-optim">
@@ -408,8 +410,9 @@ document.write(`
 \{\beta_1^*, \beta_2^*\} =
     \underset{0 &lt; \beta_1, \beta_2 &lt; 2\pi}{\mathrm{arg\ max}}{\sigma_\Sigma(\beta_1, \beta_2)}
 \]</div>
-<p>Известна скорость набегающего потока <span class="math notranslate nohighlight">\(\mathrm{M}_1 = 3\)</span> и угол 3-й ступени клина <span class="math notranslate nohighlight">\(\beta_3 = 25^\circ\)</span>.
-Показатель адиабаты <span class="math notranslate nohighlight">\(k = 1.4\)</span>.</p>
+<p><strong>Исходные данные:</strong>
+известна скорость набегающего потока <span class="math notranslate nohighlight">\(\mathrm{M}_1 = 3\)</span> и угол 3-й ступени клина <span class="math notranslate nohighlight">\(\beta_3 = 33^\circ\)</span>.
+Показатель адиабаты воздуха <span class="math notranslate nohighlight">\(k = 1.4\)</span>.</p>
 <p>Ниже приведены расчётные формулы.</p>
 <div class="math notranslate nohighlight" id="equation-nu-beta">
 <span class="eqno">(6)<a class="headerlink" href="#equation-nu-beta" title="Permalink to this equation">#</a></span>\[
@@ -423,8 +426,14 @@ document.write(`
 <span class="eqno">(7)<a class="headerlink" href="#equation-delta-beta" title="Permalink to this equation">#</a></span>\[
 \Delta\beta_i = \beta_i - \beta_{i-1};
 \]</div>
+<div class="math notranslate nohighlight" id="equation-lambda">
+<span class="eqno">(8)<a class="headerlink" href="#equation-lambda" title="Permalink to this equation">#</a></span>\[
+\lambda_{i+1} =
+    \lambda_i \cdot
+    \cfrac{\cos{\nu_i}}{\cos{(\nu_i - \Delta\beta_i)}};
+\]</div>
 <div class="math notranslate nohighlight" id="equation-sigma-i">
-<span class="eqno">(8)<a class="headerlink" href="#equation-sigma-i" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(9)<a class="headerlink" href="#equation-sigma-i" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{split}
 \sigma_i &amp;= \cfrac{p_{0, i+1}}{p_{0, i}} = \\
          &amp;= \cfrac
@@ -436,16 +445,10 @@ document.write(`
 \end{split}
 \end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-sigma-total">
-<span class="eqno">(9)<a class="headerlink" href="#equation-sigma-total" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(10)<a class="headerlink" href="#equation-sigma-total" title="Permalink to this equation">#</a></span>\[
 \sigma_\Sigma = \prod_{i=1}^3{\sigma_i}.
 \]</div>
 <p>Вспомогательные формулы:</p>
-<div class="math notranslate nohighlight" id="equation-lambda">
-<span class="eqno">(10)<a class="headerlink" href="#equation-lambda" title="Permalink to this equation">#</a></span>\[
-\lambda_{i+1} =
-    \lambda_i \cdot
-    \cfrac{\cos{\nu_i}}{\cos{(\nu_i - \Delta\beta_i)}};
-\]</div>
 <div class="math notranslate nohighlight" id="equation-lambda2mach">
 <span class="eqno">(11)<a class="headerlink" href="#equation-lambda2mach" title="Permalink to this equation">#</a></span>\[
 \mathrm{M}(\lambda) = \lambda \cdot \sqrt{
@@ -479,34 +482,91 @@ document.write(`
 </div>
 <p><strong>Алгоритм</strong> расчёта следующий:</p>
 <ol class="arabic simple">
-<li><p>Из уравнения <a class="reference internal" href="#equation-nu-beta">(6)</a> при известных согласно <a class="reference internal" href="#equation-delta-beta">(7)</a> <span class="math notranslate nohighlight">\(\Delta\beta_1\)</span>, <span class="math notranslate nohighlight">\(k\)</span> и <span class="math notranslate nohighlight">\(\mathrm{M}_1\)</span> численно ищется значение угла СУ <span class="math notranslate nohighlight">\(\nu_1\)</span> на первой ступени клина.</p></li>
-<li><p>По формуле <a class="reference internal" href="#equation-sigma-i">(8)</a> рассчитывается <span class="math notranslate nohighlight">\(\sigma_1\)</span> для первого СУ.</p></li>
-<li><p>Параметры потока за текущим СУ рассчитываются по формулам <a class="reference internal" href="#equation-lambda">(10)</a> и <a class="reference internal" href="#equation-lambda2mach">(11)</a>.</p></li>
-<li><p>Алгоритм начинается заново для следующей ступени.</p></li>
+<li><p>Из уравнения <a class="reference internal" href="#equation-nu-beta">(6)</a> при известном согласно <a class="reference internal" href="#equation-delta-beta">(7)</a> угле <span class="math notranslate nohighlight">\(\Delta\beta_1\)</span> и по исходному <span class="math notranslate nohighlight">\(\mathrm{M}_1\)</span> численно ищется значение угла СУ <span class="math notranslate nohighlight">\(\nu_1\)</span> на первой ступени клина.</p></li>
+<li><p>По формуле <a class="reference internal" href="#equation-sigma-i">(9)</a> рассчитывается <span class="math notranslate nohighlight">\(\sigma_1\)</span> для первого СУ.</p></li>
+<li><p>Скорость потока за текущим СУ рассчитывается по формулам <a class="reference internal" href="#equation-lambda">(8)</a> и <a class="reference internal" href="#equation-lambda2mach">(11)</a>.</p></li>
+<li><p>Алгоритм начинается заново для следующей ступени с учётом <a class="reference internal" href="#equation-delta-beta">(7)</a>.</p></li>
 </ol>
-<p>В итоге по формуле <a class="reference internal" href="#equation-sigma-total">(9)</a> рассчитывается коэффициент восстановления полного давления <span class="math notranslate nohighlight">\(\sigma_\Sigma\)</span>.</p>
-<p>Для решения задачи оптимизации <a class="reference internal" href="#equation-optim">(5)</a> необходимо выбрать метод, например, из модуля <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html"><code class="docutils literal notranslate"><span class="pre">optimize</span></code></a> библиотеки SciPy.</p>
+<p>В итоге по формуле <a class="reference internal" href="#equation-sigma-total">(10)</a> рассчитывается коэффициент восстановления полного давления <span class="math notranslate nohighlight">\(\sigma_\Sigma\)</span>.</p>
+<p>Для решения задачи оптимизации <a class="reference internal" href="#equation-optim">(5)</a> необходимо выбрать метод, например, из модуля <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html"><code class="docutils literal notranslate"><span class="pre">optimize</span></code></a> библиотеки научных расчётов SciPy.</p>
 </section>
 <section id="id3">
-<h2>Вариант 3<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Вариант 3 - Безопасное размещение склада боеприпасов<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p><strong>Цель</strong> - рассмотреть возможные подходы к решению поставленной задачи поисковой непрерывной оптимизации.</p>
 <p><strong>Задача</strong> - решить задачу непрерывной поисковой оптимизации, используя как можно более эффективный алгоритм.</p>
 <p>Имеется <span class="math notranslate nohighlight">\(n\)</span> городов, заданных координатами на плоскости.
-Военным «по-зарез» нужен очень большой (а потому опасный) склад боеприпасов в районе этих городов для надёжной защиты государства.</p>
+Военным необходимо разместить большой (а потому опасный) склад боеприпасов в районе этих городов для надёжной защиты государства.</p>
 <p><strong>Требуется:</strong></p>
 <ol class="arabic simple">
-<li><p>Сформулировать понятие <em>места безопасного размещения склада боеприпасов</em>.</p></li>
-<li><p>Определиться с алгоритмом решения задачи.</p></li>
+<li><p>Сформулировать понятие <em>“место безопасного размещения”</em> склада боеприпасов.</p></li>
+<li><p>Придумать или выбрать алгоритмом решения задачи.</p></li>
 <li><p>Определить координаты места безопасного размещения склада боеприпасов для всех заданных количеств городов <span class="math notranslate nohighlight">\(n_i \in N = \{25, 50, 100, 250, 500\}\)</span>.</p></li>
 <li><p>Визуализировать полученные результаты.</p></li>
 </ol>
 <p>Города генерировать случайным образом с помощью равномерного распределения.
-При этом необходимо обеспечить возможность воспроизведения расчёта настройкой параметра `seed`` у используемого генератора случайных чисел.</p>
+При этом необходимо обеспечить возможность воспроизведения расчёта настройкой параметра <code class="docutils literal notranslate"><span class="pre">seed</span></code> у используемого генератора случайных чисел.</p>
 <p>Размер пространства принять 100 на 100 км.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Никаких других - «дополнительных», «удобных», «авторских» - условий в задаче не ставить.</p>
+<p>Никаких других - «дополнительных», «удобных», «авторских» - условий в задаче не требуется.</p>
 </div>
+</section>
+<section id="id4">
+<h2>Вариант 4 - Условная и безусловная оптимизация<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p><strong>Цель</strong> - закрепить навыки численной оптимизации математических функций одного, двух и многих переменных.</p>
+<p><strong>Задача</strong> - рассмотреть и проанализировать способы (методы) оптимизации математических функций одного, двух и многих переменных.</p>
+<p>Требуется оптимимизировать - т.е. найти значения аргументов, минимизирующих целевую функцию - следующие функции:</p>
+<ol class="arabic simple">
+<li><p>Функцию Бута:</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-f-bute">
+<span class="eqno">(12)<a class="headerlink" href="#equation-f-bute" title="Permalink to this equation">#</a></span>\[
+f(x, y) =
+    (x + 2 y - 7)^2 + (2 x + y - 5)^2.
+\]</div>
+<p>Область определения аргументов: <span class="math notranslate nohighlight">\(-10 \le x, y \le 10\)</span>.
+Показать, что <span class="math notranslate nohighlight">\(f(1, 3) = 0\)</span> есть минимум.</p>
+<ol class="arabic simple" start="2">
+<li><p>Функцию Розенброка от трёх параметров:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+f(x_1, x_2, x_3) = \sum\limits_{i=1}^{2}{
+    \left[ 100 \left( x_{i+1} - x_i^2 \right)^2 + (x_i - 1)^2 \right]
+}.
+\]</div>
+<p>Область определения аргументов: <span class="math notranslate nohighlight">\(-\infty \le x_1, x_2, x_3 \le \infty\)</span>.
+Показать, что <span class="math notranslate nohighlight">\(f(1,1,1) = 0\)</span> есть минимум.</p>
+<ol class="arabic simple" start="3">
+<li><p>Функцию Экли:</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-f-ackly">
+<span class="eqno">(13)<a class="headerlink" href="#equation-f-ackly" title="Permalink to this equation">#</a></span>\[
+f(x, y) =
+    -20 \exp{\left[ -0.2 \sqrt{\cfrac{x^2 + y^2}{2}} \right]}
+    - \exp{\left[ \cfrac{\cos(2 \pi x) + \cos(2 \pi y)}{2} \right]}
+    + e + 20.
+\]</div>
+<p>Область определения аргументов: <span class="math notranslate nohighlight">\(-5 \le x, y \le 5\)</span>.
+Показать, что <span class="math notranslate nohighlight">\(f(0, 0) = 0\)</span> есть минимум.</p>
+<ol class="arabic simple" start="4">
+<li><p>Ограниченную функцию Мишры-Бёрда:</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-f-mishra-bird">
+<span class="eqno">(14)<a class="headerlink" href="#equation-f-mishra-bird" title="Permalink to this equation">#</a></span>\[
+f(x, y) =
+    \sin{(y)} \exp{\left[ (1 - \cos{x})^2 \right]}
+    + \cos{(x)} \exp{\left[ (1 - \sin{y})^2 \right]}
+    + (x - y)^2
+\]</div>
+<p>при ограничении</p>
+<div class="math notranslate nohighlight">
+\[
+(x + 5)^2 + (y + 5)^2 &lt; 25.
+\]</div>
+<p>Область определения аргументов: <span class="math notranslate nohighlight">\(-10 \le x \le 0\)</span> и <span class="math notranslate nohighlight">\(-6.5 \le y \le 0\)</span>.
+Показать, что <span class="math notranslate nohighlight">\(f(-3.1302468, -1.5821422) = -106.7645367\)</span> есть минимум.</p>
+<p>Постройте графики функций <a class="reference internal" href="#equation-f-bute">(12)</a>, <a class="reference internal" href="#equation-f-ackly">(13)</a> и <a class="reference internal" href="#equation-f-mishra-bird">(14)</a>.</p>
 </section>
 </section>
 
@@ -573,9 +633,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Вариант 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Вариант 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Вариант 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Вариант 1 - Задача о рюкзаке</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Вариант 2 - Оптимизация трёхступенчатого клина</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Вариант 3 - Безопасное размещение склада боеприпасов</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Вариант 4 - Условная и безусловная оптимизация</a></li>
 </ul>
   </nav></div>
 
